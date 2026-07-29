@@ -1,0 +1,7 @@
+<resources>
+    <!-- Compose tema (ui/theme/Theme.kt) asıl kaynak; bu sadece splash öncesi/manifest zorunluluğu için. -->
+    <style name="Theme.PanoKontrol" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#071F4C</item>
+        <item name="android:windowBackground">#F5F7FA</item>
+    </style>
+</resources>
