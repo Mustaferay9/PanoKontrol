@@ -7,7 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.panokontrol.gridcheck.ui.screens.capture.CaptureScreen
+import com.panokontrol.gridcheck.ui.screens.capture.BatchInspectionScreen
 import com.panokontrol.gridcheck.ui.screens.dashboard.DashboardScreen
 import com.panokontrol.gridcheck.ui.screens.login.LoginScreen
 import com.panokontrol.gridcheck.ui.screens.processing.ProcessingScreen
@@ -29,18 +29,18 @@ fun PanoKontrolNavGraph(navController: NavHostController = rememberNavController
         }
         composable(Screen.Dashboard.route) {
             DashboardScreen(
-                onStartInspection = { navController.navigate(Screen.InspectionFlow.route) },
+                onStartInspection = { navController.navigate(Screen.Capture.route) },
                 onOpenPastInspection = { inspectionId ->
-                    val targetPanoId = if (inspectionId.contains("0147") || inspectionId.contains("0145")) "door" else "interior"
+                    val targetPanoId = if (inspectionId.contains("0147") || inspectionId.contains("0145")) "pass_demo" else "fail_demo"
                     navController.navigate(Screen.Result.createRoute(targetPanoId))
                 }
             )
         }
         composable(Screen.Capture.route) {
-            CaptureScreen(
+            BatchInspectionScreen(
                 onBack = { navController.popBackStack() },
-                onAnalyze = { selectedPanoId ->
-                    navController.navigate(Screen.Processing.createRoute(selectedPanoId))
+                onAnalyze = { 
+                    navController.navigate(Screen.Processing.createRoute("demo"))
                 },
             )
         }
