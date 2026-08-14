@@ -47,6 +47,9 @@ Uygulama, modern Android geliştirme standartlarına uygun olarak inşa edilmiş
 2. **Android Studio** ile projeyi açın.
 3. Gradle senkronizasyonunun tamamlanmasını bekleyin.
 4. `ApiClient.kt` dosyasındaki `BASE_URL` değişkenini aktif API sunucu adresiniz ile güncelleyin:
+
+   > 💡 **Not:** Ngrok bağlantısı Eray tarafından kurulmuştur. Farklı bir sunucuya veya yeni bir ngrok oturumuna bağlanmak isterseniz, aşağıdaki URL'yi kendi sunucu adresinizle değiştirmeniz gerekmektedir.
+
    ```kotlin
    // app/src/main/java/com/panokontrol/gridcheck/ApiClient.kt
    const val BASE_URL = "https://<GUNCEL_NGROK_ADRESI>.ngrok-free.dev/"
