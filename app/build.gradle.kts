@@ -67,6 +67,7 @@ dependencies {
     // Faz 2/4: görsel yükleme + network
     implementation(libs.coil.compose)
     implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
     implementation(libs.retrofit.kotlinx.serialization.converter)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)

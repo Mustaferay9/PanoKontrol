@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Solid Yellow Square with soft rounded corners -->
+    <path
+        android:fillColor="#FFB800"
+        android:pathData="M6,6 h36 a0,0 0 0 1 0,0 v36 a0,0 0 0 1 0,0 h-36 a0,0 0 0 1 0,0 v-36 a0,0 0 0 1 0,0 Z" />
+    
+    <!-- Inner White Stroke Rectangle -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:fillColor="#00000000"
+        android:pathData="M11,11 h26 v26 h-26 Z" />
+</vector>

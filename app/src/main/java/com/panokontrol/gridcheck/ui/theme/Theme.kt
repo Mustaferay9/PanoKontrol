@@ -30,12 +30,13 @@ private val PanoKontrolColorScheme = lightColorScheme(
 @Composable
 fun PanoKontrolTheme(content: @Composable () -> Unit) {
     val colorScheme = PanoKontrolColorScheme
-    // Header her zaman Navy zeminli, dolayısıyla durum çubuğu ikonları hep açık renk.
     val view = LocalView.current
     if (!view.isInEditMode) {
-        val activity = view.context as? android.app.Activity
-        activity?.window?.let { window ->
-            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = false
+        runCatching {
+            val activity = view.context as? android.app.Activity
+            activity?.window?.let { window ->
+                WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = false
+            }
         }
     }
 

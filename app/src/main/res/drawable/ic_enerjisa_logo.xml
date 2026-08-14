@@ -1,0 +1,54 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Outer Glow Circle -->
+    <path
+        android:fillColor="#150F2B66"
+        android:pathData="M48,48m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0" />
+    
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#0A192F"
+        android:pathData="M48,48m-38,0a38,38 0,1 1,76 0a38,38 0,1 1,-76 0" />
+
+    <!-- Enerjisa Sunburst Petals (Yellow #FFC72C & Cyan #00E5FF accents) -->
+    <!-- Top Petal -->
+    <path
+        android:fillColor="#FFC72C"
+        android:pathData="M48,18 C52,26 53,34 48,40 C43,34 44,26 48,18 Z" />
+    <!-- Bottom Petal -->
+    <path
+        android:fillColor="#FFC72C"
+        android:pathData="M48,78 C44,70 43,62 48,56 C53,62 52,70 48,78 Z" />
+    <!-- Top Right Petal -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M74,33 C67,39 60,43 54,40 C57,34 65,30 74,33 Z" />
+    <!-- Bottom Left Petal -->
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M22,63 C29,57 36,53 42,56 C39,62 31,66 22,63 Z" />
+    <!-- Top Left Petal -->
+    <path
+        android:fillColor="#FFA000"
+        android:pathData="M22,33 C31,30 39,34 42,40 C36,43 29,39 22,33 Z" />
+    <!-- Bottom Right Petal -->
+    <path
+        android:fillColor="#FFA000"
+        android:pathData="M74,63 C65,66 57,62 54,56 C60,53 67,57 74,63 Z" />
+
+    <!-- Center Core Spark -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M48,48m-7,0a7,7 0,1 1,14 0a7,7 0,1 1,-14 0" />
+    <path
+        android:fillColor="#FFC72C"
+        android:pathData="M48,48m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+
+    <!-- Modern Lightning Accent -->
+    <path
+        android:fillColor="#0A192F"
+        android:pathData="M49,43 L45,49 L48,49 L47,53 L51,47 L48,47 Z" />
+</vector>

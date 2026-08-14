@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparky (PanoKontrol) - Sunum ve Proje Rehberi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        @page {
+            size: A4;
+            margin: 16mm 14mm;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0A192F 0%, #172A46 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #FFC107;
+        }
+
+        .header-title h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-title h1 span {
+            color: #FFC107;
+        }
+
+        .header-title p {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        .header-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-align: right;
+        }
+
+        .header-badge .tag {
+            font-size: 11px;
+            font-weight: 700;
+            color: #FFC107;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-badge .author {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            page-break-inside: avoid;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0A192F;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 6px;
+        }
+
+        .card-title .icon {
+            font-size: 16px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .highlight-box {
+            background: #f8fafc;
+            border-left: 4px solid #0A192F;
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box.yellow {
+            border-left-color: #FFC107;
+            background: #fffdf5;
+        }
+
+        .highlight-box.green {
+            border-left-color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .highlight-box h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #0A192F;
+            margin-bottom: 3px;
+        }
+
+        .highlight-box p {
+            font-size: 12px;
+            color: #475569;
+        }
+
+        ul {
+            padding-left: 18px;
+            margin-top: 6px;
+        }
+
+        li {
+            margin-bottom: 5px;
+            color: #334155;
+            font-size: 12.5px;
+        }
+
+        li strong {
+            color: #0A192F;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 12px;
+        }
+
+        th, td {
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #0A192F;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 11.5px;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge-success { background: #dcfce7; color: #15803d; }
+        .badge-warning { background: #fef9c3; color: #854d0e; }
+        .badge-info { background: #e0f2fe; color: #0369a1; }
+        .badge-dark { background: #0A192F; color: #ffffff; }
+
+        .speaker-box {
+            background: #fdf6ec;
+            border: 1px dashed #d97706;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-top: 8px;
+            font-style: italic;
+            color: #92400e;
+            font-size: 12px;
+        }
+
+        .speaker-box strong {
+            font-style: normal;
+            color: #78350f;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 11px;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-title">
+            <h1>⚡ Sparky · <span>PanoKontrol</span></h1>
+            <p>Yapay Zeka Destekli Akıllı Elektrik Panosu Denetim ve Doğrulama Sistemi</p>
+        </div>
+        <div class="header-badge">
+            <div class="tag">Sunum & Savunma Rehberi</div>
+            <div class="author">Mustafa Eray Erdoğan</div>
+        </div>
+    </div>
+
+    <!-- BÖLÜM 1: HEDEF VE PROBLEM TANIMI -->
+    <div class="card">
+        <div class="card-title">
+            <span class="icon">🎯</span> 1. Projenin Amacı ve Temel Hedefleri
+        </div>
+        <p style="margin-bottom: 10px; color: #475569;">
+            Elektrik dağıtım şebekesinde (EDAŞ / TEDAŞ) saha personellerinin pano denetimlerini manuel, yavaş ve hata payı yüksek yöntemlerden kurtararak saniyeler içinde dijital ve yapay zeka destekli hale getirmektir.
+        </p>
+
+        <div class="grid-2">
+            <div class="highlight-box yellow">
+                <h4>🚀 1. Basit ve Ergonomik Arayüz (Saha Odaklı)</h4>
+                <p>Sahada baret, eldiven ve zorlu fiziki şartlarda çalışan personelin karmaşık menülerle uğraşmadan <strong>tek tıkla</strong> denetim başlatıp net sonuç alması sağlandı.</p>
+            </div>
+            <div class="highlight-box green">
+                <h4>⚡ 2. Yüksek Hız ve Anlık Geri Bildirim</h4>
+                <p>Kamera çekiminden sonra <strong>saniyeler içinde</strong> pano içi modüller (400A/160A DSYA), dış kapak etiketleri ve uyarı levhaları analiz edilir ve doğruluk yüzdesiyle raporlanır.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h4>🛡️ 3. İnsan Hatasını Sıfırlama ve Standartlaşma</h4>
+            <p>Gözden kaçabilecek sigorta/modül tipleri, yanlış şalt malzemeleri ve eksik tehlike levhaları AI ile standart hale getirilir; SAP malzeme kodu (1086 vb.) doğrulanır.</p>
+        </div>
+
+        <div class="speaker-box">
+            <strong>🗣️ Slayt Konuşmacı Notu:</strong>
+            "Projemizin ana hedefi; karmaşık teknik işlemleri sahada eldiveniyle çalışan teknisyenin tek bir dokunuşla en hızlı ve hatasız şekilde tamamlayabilmesini sağlamaktır."
+        </div>
+    </div>
+
+    <!-- BÖLÜM 2: NEDEN KOTLIN VE ZEBRA -->
+    <div class="card">
+        <div class="card-title">
+            <span class="icon">📱</span> 2. Neden Kotlin & Neden Native Android? (Zebra Entegrasyonu)
+        </div>
+
+        <ul>
+            <li>
+                <strong>Zebra Endüstriyel El Terminalleri ile %100 Donanım Uyumu:</strong> Sahada yoğun olarak kullanılan dayanıklı Zebra Android terminallerinin dahili barkod motoru (DataWedge / EMDK) ve endüstriyel kamera sensörleri en stabil, sıfır ek yükle (zero-overhead) Native Android üzerinde çalışır.
+            </li>
+            <li>
+                <strong>Null Safety (Sıfır Çökme / Crash Güvencesi):</strong> Kotlin'in derleme aşamasında sağladığı tip güvenliği, sahadaki personelin elindeyken uygulamanın beklenmedik şekilde çökmesini engeller.
+            </li>
+            <li>
+                <strong>Kotlin Coroutines ile Akıcı Performans:</strong> Yapay zeka analizi, görsel işleme ve ağ istekleri arka planda asenkron çalışır; arayüz asla donmaz (60 FPS pürüzsüz deneyim).
+            </li>
+            <li>
+                <strong>Google & Android Ekosisteminin 1 Numaralı Resmi Dili:</strong> En güncel güvenlik, kamera ve yapay zeka kütüphaneleri ilk olarak Kotlin için optimize edilir.
+            </li>
+        </ul>
+
+        <div class="speaker-box">
+            <strong>🗣️ Slayt Konuşmacı Notu:</strong>
+            "Neden cross-platform (Flutter/React Native) yerine Kotlin seçtik? Çünkü sahada kullanılan Zebra el terminalleri gibi endüstriyel donanımların SDK'ları ve optik donanımları en yüksek performansı native Android katmanında verir."
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- BÖLÜM 3: GELİŞTİRİRKEN NELER KULLANDIK (TECH STACK) -->
+    <div class="card">
+        <div class="card-title">
+            <span class="icon">🛠️</span> 3. Kullanılan Teknolojiler ve Mimari (Tech Stack)
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Bileşen / Katman</th>
+                    <th>Kullanılan Teknoloji</th>
+                    <th>Neden Tercih Edildi?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Yazılım Dili</strong></td>
+                    <td><span class="badge badge-dark">Kotlin 2.0</span></td>
+                    <td>Tip güvenliği, modern sözdizimi, endüstri standardı.</td>
+                </tr>
+                <tr>
+                    <td><strong>Kullanıcı Arayüzü (UI)</strong></td>
+                    <td><span class="badge badge-info">Jetpack Compose + Material 3</span></td>
+                    <td>Deklaratif, dinamik animasyonlu ve yüksek kontrastlı modern arayüz.</td>
+                </tr>
+                <tr>
+                    <td><strong>Kamera & Medya</strong></td>
+                    <td><span class="badge badge-info">CameraX + Coil Compose</span></td>
+                    <td>Cihazlar arası tutarlı kamera kontrolü ve hızlı asenkron görsel önbellekleme.</td>
+                </tr>
+                <tr>
+                    <td><strong>Ağ & İletişim</strong></td>
+                    <td><span class="badge badge-info">Retrofit 2 + OkHttp (Logging)</span></td>
+                    <td>Yapay zeka sunucusu ile REST API üzerinden güvenli ve hızlı haberleşme.</td>
+                </tr>
+                <tr>
+                    <td><strong>Serileştirme</strong></td>
+                    <td><span class="badge badge-info">Kotlinx Serialization JSON</span></td>
+                    <td>Reflect kullanmayan, yüksek performanslı tip güvenli JSON parser.</td>
+                </tr>
+                <tr>
+                    <td><strong>Mimari & Navigasyon</strong></td>
+                    <td><span class="badge badge-dark">MVVM + Jetpack Navigation</span></td>
+                    <td>Ekranlar arası akıcı geçiş, bakımı kolay ve modüler kod tabanı.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- BÖLÜM 4: UYGULAMA ÖZELLİKLERİ VE DENETİM DETAYLARI -->
+    <div class="card">
+        <div class="card-title">
+            <span class="icon">🔍</span> 4. Uygulama Akışı ve Akıllı Denetim Özellikleri
+        </div>
+
+        <div class="grid-2">
+            <div style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <h4 style="color: #0A192F; margin-bottom: 6px;">1. Pano İçi Denetimi (İç Aksam)</h4>
+                <ul style="padding-left: 14px; font-size: 11.5px;">
+                    <li><strong>400A DSYA Modülü:</strong> Federal FVS 400 (In: 400A, Ui: 690V, IP20) tespiti ve etiket doğrulama.</li>
+                    <li><strong>160A DSYA Modülleri:</strong> 9 adet 160A dikey sigortalı yük ayırıcı sayımı ve konum doğrulaması.</li>
+                    <li><strong>SAP Kodu Eşleşmesi:</strong> 1086 kodlu standart pano şartnamesi uygunluk kontrolü (%98.4 başarı).</li>
+                </ul>
+            </div>
+
+            <div style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <h4 style="color: #0A192F; margin-bottom: 6px;">2. Dış Kapak ve Güvenlik Denetimi</h4>
+                <ul style="padding-left: 14px; font-size: 11.5px;">
+                    <li><strong>Ürün & CE Etiketi:</strong> Pano dış kimlik etiketinin okunurluğu ve varlığı (%98.0 güven).</li>
+                    <li><strong>Ölüm Tehlikesi Levhası:</strong> TEDAŞ standartlarındaki sarı üçgen ikaz levhasının doğrulanması (%95.0).</li>
+                    <li><strong>DI-F-142 Şartname Uyumu:</strong> Kapak kilit ve levha standartlarının tespiti.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 12px;">
+            <p style="font-size: 12px; color: #475569;">
+                ✨ <strong>İnteraktif Özellikler:</strong> Orijinal vs. İşlenmiş (AI) katman geçişi, büyütülmüş yüksek çözünürlüklü okunabilir etiket galerisi, dinamik lazer tarama efekti.
+            </p>
+        </div>
+    </div>
+
+    <!-- BÖLÜM 5: JÜRİ SORU & CEVAP REHBERİ -->
+    <div class="card">
+        <div class="card-title">
+            <span class="icon">💬</span> 5. Olası Jüri & Yönetici Soruları (Q&A Hazırlığı)
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <p style="font-weight: 700; color: #0A192F; font-size: 12px;">❓ Soru: "Neden Flutter veya React Native tercih etmediniz?"</p>
+            <p style="font-size: 12px; color: #475569;">
+                💡 <strong>Cevap:</strong> "Sahadaki Zebra el terminalleri gibi endüstriyel cihazların donanımsal barkod okuyucu ve kamera SDK'ları native Android ile doğrudan konuşur. Cross-platform köprü katmanı (bridge) olmadan sıfır gecikmeyle çalışmak ve Jetpack Compose ile modern bir UI kurmak için Kotlin'i seçtik."
+            </p>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <p style="font-weight: 700; color: #0A192F; font-size: 12px;">❓ Soru: "Saha koşullarında internet çekmezse uygulama çalışır mı?"</p>
+            <p style="font-size: 12px; color: #475569;">
+                💡 <strong>Cevap:</strong> "Uygulama yerel önbellekleme mimarisine sahiptir. Çekimler yerel kuyruğa alınabilir. Yol haritamızda (Roadmap) küçültülmüş on-device modeller ile internet olmadan doğrudan cihaz üzerinde tespit hedefi bulunmaktadır."
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Sparky Pano Denetim Sistemi · Başkent EDAŞ / TEDAŞ Uyumlu Saha Çözümü · 2026
+    </div>
+
+</body>
+</html>
