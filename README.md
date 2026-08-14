@@ -1,6 +1,6 @@
 # PanoKontrol (GridCheck) ⚡🤖
 
-![PanoKontrol](app_running_screenshot.png) *(Proje önizleme görsellerini buraya ekleyebilirsiniz)*
+![PanoKontrol](app_preview.png) *(Proje önizleme görsellerini buraya ekleyebilirsiniz)*
 
 **PanoKontrol**, Enerjisa dağıtım panolarının denetim süreçlerini dijitalleştirmek ve hızlandırmak amacıyla geliştirilmiş, **YOLOv8** tabanlı yapay zeka analiz destekli bir Android uygulamasıdır. Sahadaki teknisyenlerin, dağıtım panolarının fotoğraflarını çekerek saniyeler içinde içindeki ekipmanların doğruluğunu, uyarı levhalarının varlığını ve SAP kod eşleşmelerini kontrol etmesini sağlar.
 
